@@ -6,11 +6,11 @@
 /*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 15:17:23 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/08 16:48:42 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/09 20:54:11 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
-int	ft_strlen(char *str)
+int	ft_strlen(const char *str)
 {
 	int i; 
 	i = 0;

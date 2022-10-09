@@ -6,22 +6,37 @@
 /*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:24:03 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/08 17:29:55 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/09 18:28:20 by souledla         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */char *ft_substr(char const *s, unsigned int start, size_t len)
+/* ************************************************************************** */
+#include <stdio.h>
+#include <stdlib.h>
+char *ft_substr(char const *s, unsigned int start, size_t len)
+	
 {
-	int i; 
+	size_t i; 
 
 	i = 0;
-	char *temp; 
+	char *temp;
+   	if (start > ft_strlen(s))
+	{
+		temp = (char *)malloc(sizeof (char) * 1);
+		if (!temp)
+			return 0;
+		temp[i] = '\0';
+	}	
 	temp = (char *)malloc(sizeof (char) * (len + 1));
 	if (!temp)
 		return 0;
-	while (len >= 0)
+	while (len > i)
 	{
 		temp[i++] = s[start++];
-		len--;
 	}
 	temp[i] = '\0';
 	return temp;
+}
+int main() {
+	char arr[]="Hello World";
+	printf("%s",ft_substr(arr,5,3));
+    return 0;
 }

@@ -6,14 +6,14 @@
 /*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 20:58:23 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/09 21:43:39 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:35:57 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // Online C compiler to run C program online
 #include <stdio.h>
-#include <stdlib.h>
-int delim_counter(char *str, char c)
+# include "libft.h"
+int delim_counter(char const *str, char c)
 {
 	int i;
 	int counter;
@@ -32,9 +32,9 @@ int delim_counter(char *str, char c)
 
 void	func(char **temp, char x0, char x1, char x2, char const *s) 
 {
-	temp[x0][--x2] = '\0';
+	temp[x0][x2] = '\0';
 	while(x2 >= 0)
-		temp[x0][x2--] = s[x2 + x1];
+		temp[x0][x2] = s[x2 + x1];
 		x2--;
 }
 
@@ -44,7 +44,7 @@ char	**ft_split(char const *s, char c)
 	int x[3];
 
 	x[0] = 0;
-	temp = (char **)malloc((delim_counter(s, c) + 2) * sizeof(char));
+	temp = (char **)malloc((delim_counter(s, c) + 2) * sizeof(const char));
 	if (!temp)
 		return 0;
 	x[1] = 0;
@@ -67,6 +67,7 @@ char	**ft_split(char const *s, char c)
 	}
 	return temp;
 }
+/*
 int main() {
     char **temp = ft_split("AASaSASAafdksjfkfdjfdjfsa64545",'a');
     int x[3];
@@ -80,3 +81,4 @@ int main() {
 
     return 0;
 }
+*/

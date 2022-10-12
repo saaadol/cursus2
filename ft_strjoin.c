@@ -6,11 +6,11 @@
 /*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:35:36 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/08 17:46:02 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/12 13:36:24 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "libft.h"
 char *ft_strjoin(char const *s1,char const *s2)
 {
 	char *temp;

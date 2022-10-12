@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 10:41:20 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/12 10:41:29 by souledla         ###   ########.fr       */
+/*   Created: 2022/10/12 10:40:17 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/12 10:40:23 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t  ft_strlcpy(char *dst, const char *src, size_t size)
+void *ft_memcpy(void *dst, const void *src, size_t n)
 {
-    size_t i;
-    size_t len_src;
-    
-    len_src = ft_strlen(src) - 1;
-    i = 0;
-    
-    if (size == 0)
-        return len_src;
-    size--;
-    while(dst[i] && i <= size)
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return len_src;
+	char	*d;
+	char	*s;
+	size_t	 i;
+
+	i = 0;
+	d = (char *)dst;
+	s = (char *)src;
+	if (n == 0)
+	    return dst;
+	n--;
+	
+	while (i <= n)
+	{
+		d[i] = s[i];
+		i++;
+	}
+	return dst;
 }

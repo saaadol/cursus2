@@ -18,15 +18,10 @@ void ft_bzero(void *s, size_t n)
 
 	temp = (char *) s;
 	i = 0;
-	if (n == 0)
-	   return 0;
-	else
-		{
-			while (i < n)
-			{
-				temp[i] = '\0';
-				i++;
-			}
-		}	
-	return (temp); 
+	while (i < n)
+	{
+		temp[i] = '\0';
+		i++;
+	}
+		
 }

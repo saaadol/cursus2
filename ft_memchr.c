@@ -5,7 +5,7 @@ void *ft_memchr(const void *s, int c, size_t n)
     x = (char *) s;
     size_t i;
     i = 0;
-    while (x[i] && i < n)
+    while (i < n)
     {
         if (x[i] == c)
             return x + i;

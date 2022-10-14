@@ -1,0 +1,313 @@
+!<arch>
+ft_calloc.c     1665565797  37233 5000  100644  1073      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/08 17:06:32 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/09 21:11:39 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
+
+void *ft_calloc(size_t count, size_t size)
+{
+	char *temp;
+	temp = (char *)malloc(count * size);
+	if (!temp)
+		return 0;
+	ft_bzero(temp, count);
+	return (temp);
+}
+
+ft_strdup.c     1665565797  37233 5000  100644  1241      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/08 15:17:23 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/09 20:54:11 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <stdlib.h>
+int	ft_strlen(const char *str)
+{
+	int i; 
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(const char *s1)
+{
+	char	*temp;
+    int		i;
+
+    i = 0;
+    temp = (char *)malloc(sizeof (char) * (ft_strlen(s1) + 1));
+	if (!temp)
+		return 0;
+	while (s1[i])
+	{
+		temp[i] = s1[i];
+		i++;
+	}
+	temp[i] = '\0';
+	return (temp);
+}
+
+ft_strtrim.c    1665565797  37233 5000  100644  1916      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/08 17:55:31 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/08 20:57:50 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <stdlib.h>
+#include "libft.h"
+
+int checksset(char const *s1, char const *set)
+{
+	int		i;
+	int		j;
+	int		f;
+
+	i = 0;
+	while (*(s1 + i))
+	{
+		j = 0;
+		while (*(set + j))
+		{
+			f = 0;
+			if (*(s1 + i) == *(set + j))
+			{
+				f = 1;
+				break ;
+			}
+			j++;
+		}
+		if (f == 1)
+			i++;
+		else
+			break ;
+	}
+	return (i);
+}
+int checkeset(char const *s1, char const *set, int last)
+{
+	int		i;
+	int		j;
+	int		f;
+
+	i = 0;
+	while (*(s1 + (last - i)))
+	{
+		j = 0;
+		while (*(set + j))
+		{
+			f = 0;
+			if (*(s1 + (last - i)) == *(set + j))
+			{
+				f = 1;
+				break ;
+			}
+			j++;
+		}
+		if (f == 1)
+			i++;
+		else
+			break ;
+	}
+	return (last - i);
+}
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	int 	s_l;
+	int 	start;
+	int 	end;
+	int 	i;
+	char	*str;
+
+	s_l = ft_strlen(s1);
+	start = checksset(s1, set);
+	end = checkeset(s1, set, s_l - 1);
+	str = (char *) malloc(((end - start) + 2) * sizeof(char));
+	if (str)
+	{
+		i = 0;
+		while (start <= end)
+			*(str + i++) = *(s1 + start++);
+		*(str + i) = '\0';
+	}
+	return (str);
+}
+
+ft_split.c      1665578157  37233 5000  100644  2063      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/08 20:58:23 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/12 13:35:57 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// Online C compiler to run C program online
+#include <stdio.h>
+# include "libft.h"
+int delim_counter(char const *str, char c)
+{
+	int i;
+	int counter;
+
+	counter = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			counter++;
+		i++;
+	}
+	return counter;
+
+}
+
+void	func(char **temp, char x0, char x1, char x2, char const *s) 
+{
+	temp[x0][x2] = '\0';
+	while(x2 >= 0)
+		temp[x0][x2] = s[x2 + x1];
+		x2--;
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char **temp;
+	int x[3];
+
+	x[0] = 0;
+	temp = (char **)malloc((delim_counter(s, c) + 2) * sizeof(const char));
+	if (!temp)
+		return 0;
+	x[1] = 0;
+	while(s[x[1]])
+	{
+		if (x[1] == 0 || s[x[1]] == c)
+		{ 
+			x[2] = 0;
+			if (s[x[1]] == c)
+				x[1]++;
+			while (s[x[1]+x[2]] != c && s[x[1]+x[2]])
+				x[2]++;
+			temp[x[0]]=(char *) malloc(x[2] * sizeof(char));
+			if (!temp)
+				return 0;
+			func(temp,x[0],x[1],x[2],s);
+			x[0]++;
+		}
+		x[1]++;
+	}
+	return temp;
+}
+/*
+int main() {
+    char **temp = ft_split("AASaSASAafdksjfkfdjfdjfsa64545",'a');
+    int x[3];
+    x[0] = 1;
+    printf("%s\n",temp[0]);
+    printf("%s\n",temp[1]);
+    printf("%s\n",temp[2]);
+    printf("%s\n",temp[3]);
+    printf("%d",x[0]);
+
+
+    return 0;
+}
+*/
+
+ft_strjoin.c    1665578184  37233 5000  100644  1217      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/08 17:35:36 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/12 13:36:24 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+char *ft_strjoin(char const *s1,char const *s2)
+{
+	char *temp;
+	int len;
+	int i;
+	
+	i = 0;
+	len = ft_strlen(s1) + ft_strlen(s2);
+	temp = (char *)malloc(sizeof(char) * (len + 1));
+	if (!temp)
+		return 0;
+	while (*s1)
+	   temp[i++] = *s1++;
+	while (*s2)
+		temp[i++] = *s2++;
+	temp[i] = '\0';
+	return temp;
+}
+
+ft_substr.c     1665578341  37233 5000  100644  1293      `
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/08 17:24:03 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/12 13:39:01 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include "libft.h"
+char *ft_substr(char const *s, unsigned int start, size_t len)
+	
+{
+	size_t i; 
+
+	i = 0;
+	char *temp;
+   	if (start > ft_strlen(s))
+	{
+		temp = (char *)malloc(sizeof (char) * 1);
+		if (!temp)
+			return 0;
+		temp[i] = '\0';
+	}	
+	temp = (char *)malloc(sizeof (char) * (len + 1));
+	if (!temp)
+		return 0;
+	while (len > i)
+	{
+		temp[i++] = s[start++];
+	}
+	temp[i] = '\0';
+	return temp;
+}
+

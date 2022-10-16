@@ -1,26 +1,37 @@
 #include "libft.h"
-
-char *ft_strnstr(const char *big, const char *little, size_t len)
+#include<stdio.h>
+#include<string.h>
+char *ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-    size_t i;
-    size_t j;
-    
-    i = 0;
-    
-    if (ft_strlen(little) == 0 ||  (len == 0))
-        return big;
-    len--;
-    while(big[i] && i < len)
-    {
-        j = 0;
-        while (little[j])
-        {
-            if (big[i] == little[j])
-                return big + i;
-            j++;
-        }
-        i++;
-        
-    }
-    return NULL;
+	size_t	i;
+	size_t	j;
+	size_t	n;
+	char	*s;
+
+	i = 0;
+	j = 0;
+	n = ft_strlen(needle);
+	s = (char *) haystack;
+	if (n == 0)
+		return (s);
+	while (s[i] != '\0' && i <= len)
+	{
+		if (needle[j] == s[i] && j < n)
+			j++;
+		else
+			j = 0;
+		i++;
+		if (j == n)
+			return (s + i - n);
+	}
+	return (0);
+}
+
+int main()
+{
+    char *s1 = "";
+	char *s2 = "hello";
+    printf("%s\n", ft_strnstr(0, "hello", 3));  
+    printf("----------\n");
+    printf("%s\n", strnstr(0, "hello", 3)); 
 }

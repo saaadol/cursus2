@@ -14,7 +14,6 @@ NAME = libft.a
 FILES = ft_calloc.c \
 		ft_strdup.c \
 		ft_strtrim.c \
-		ft_split.c \
 		ft_strjoin.c \
 		ft_bzero.c \
 		ft_memcpy.c \
@@ -28,6 +27,13 @@ FILES = ft_calloc.c \
 		ft_isprint.c \
 		ft_toupper.c \
 		ft_tolower.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_memcmp.c \
+		ft_strncmp.c \
+		ft_strlcpy.c \
+		ft_strlcat.c \
+		ft_strnstr.c \
 		ft_substr.c
 CFLAGS = -Wall -Wextra -Werror
 OBJS = $(FILES:.c=.o)

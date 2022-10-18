@@ -10,9 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
+#include<stdio.h>
 #include "libft.h"
 
-int checksset(char const *s1, char const *set)
+int checkfirst(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
@@ -39,7 +40,7 @@ int checksset(char const *s1, char const *set)
 	}
 	return (i);
 }
-int checkeset(char const *s1, char const *set, int last)
+int checklast(char const *s1, char const *set, int last)
 {
 	int		i;
 	int		j;
@@ -64,6 +65,8 @@ int checkeset(char const *s1, char const *set, int last)
 		else
 			break ;
 	}
+	// if (last - i < 0)
+	// 	return (0);
 	return (last - i);
 }
 char	*ft_strtrim(char const *s1, char const *set)
@@ -74,9 +77,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int 	i;
 	char	*str;
 
+	if (!s1 || !set)
+		return 0;
 	s_l = ft_strlen(s1);
-	start = checksset(s1, set);
-	end = checkeset(s1, set, s_l - 1);
+	start = checkfirst(s1, set);
+	end = checklast(s1, set, s_l - 1);
+	if (start > end)
+		return (ft_calloc(1,1));
 	str = (char *) malloc(((end - start) + 2) * sizeof(char));
 	if (str)
 	{
@@ -86,5 +93,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		*(str + i) = '\0';
 	}
 	return (str);
+}
+int main()
+{
+	char *s1 = "  \t \t \n   \n\n\n\t";
+	char *ret = ft_strtrim(s1, " \n\t");
+	printf("%s", ret);
 }
 

@@ -1,6 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/18 11:19:13 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/18 11:19:18 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
-#include<stdio.h>
-#include<string.h>
+
 char *ft_strchr(const char *s, int c)
 {
 
@@ -16,9 +26,10 @@ char *ft_strchr(const char *s, int c)
     }
     return 0;
 }
-int main ()
-{
-  char *x = "hello";
-  int b = 116 + 256;
-  printf("%s", ft_strchr(x,b));
-}
+
+// int main ()
+// {
+//   char *x = "hello";
+//   int b = 116 + 256;
+//   printf("%s", ft_strchr(x,b));
+// }

@@ -34,6 +34,8 @@ FILES = ft_calloc.c \
 		ft_strlcpy.c \
 		ft_strlcat.c \
 		ft_strnstr.c \
+		ft_atoi.c \
+		ft_itoa.c \
 		ft_substr.c
 CFLAGS = -Wall -Wextra -Werror
 OBJS = $(FILES:.c=.o)

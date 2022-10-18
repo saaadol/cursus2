@@ -34,12 +34,12 @@ void dev(int c, char *x , int temp, int flag)
     else
         x[t] = '\0';
 }
-char *ft_itoi(int c)
+char *ft_itoa(int c)
 {
     char *x;
     int temp;
     int flag;
-  
+    
     flag = 0;
     if (c < 0)
     {
@@ -50,11 +50,15 @@ char *ft_itoi(int c)
     if (flag == 1)
     {
         x = (char *)malloc(sizeof(char) * (temp + 2));
+        if(!x)
+            return 0;
         x[0] = '-';
     }
     else
     {
         x = (char *)malloc(sizeof(char) * (temp + 1));
+        if(!x)
+            return 0;
         temp--;
     }
     dev(c, x, temp, flag);

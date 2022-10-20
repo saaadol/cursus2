@@ -1,6 +1,7 @@
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int len_counter(int c)
+int len_counter(long c)
 {
     int counter; 
     counter = 0;
@@ -12,7 +13,7 @@ int len_counter(int c)
     return counter ;
 }
 
-void dev(int c, char *x , int temp, int flag)
+void dev(long c, char *x , int temp, int flag)
 {
     int m;
     int t;
@@ -34,16 +35,18 @@ void dev(int c, char *x , int temp, int flag)
     else
         x[t] = '\0';
 }
-char *ft_itoa(int c)
+char *ft_itoa(int c1)
 {
     char *x;
     int temp;
     int flag;
+    long c;
     
+    c = c1;
     flag = 0;
     if (c < 0)
     {
-      c *= -1;
+      c = -c;
       flag = 1;
     }
     temp = len_counter(c) + 1;

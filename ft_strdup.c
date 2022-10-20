@@ -9,15 +9,7 @@
 /*   Updated: 2022/10/09 20:54:11 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-int	ft_strlen(const char *str)
-{
-	int i; 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

@@ -14,7 +14,7 @@
 #include <string.h>
 
 
-char	*ft_strcat(char	*s1, const char *s2)
+static char	*ft_strcat(char	*s1, const char *s2)
 {
 	int	i;
 	int	j;
@@ -35,7 +35,7 @@ char	*ft_strcat(char	*s1, const char *s2)
 	return (s1);
 }
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+static char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
 	size_t	j;
 	size_t	l;

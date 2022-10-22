@@ -1,19 +1,19 @@
-void f(unsigned int i, char *s)
+#include <stdio.h>
+void f_striteri(unsigned int i, char *s) 
 {
-        *s += 1;
-}
+    *s += i;
+ }
 
 void ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    unsigned int x;
+
     unsigned int i;
     
-    x = 0;
+    if (!s || !f)
+        return ; 
     i = 0;
-    while (s[x])
-        x++;
-    while (i < x)
-    {
+    while (s[i])
+    { 
         f(i,&s[i]);
         i++;
     }

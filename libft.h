@@ -14,9 +14,14 @@
 #define LIBFT_H
 
 #include <stdlib.h>
-#include <unistd.h>
+//#include <unistd.h>
 #include <stdio.h>
 
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);

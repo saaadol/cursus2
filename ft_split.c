@@ -1,64 +1,97 @@
 #include "libft.h"
-int count_words(char *s, char c)
+static void	free_words(size_t j, char **ptr)
 {
-    int i;
-    int counter;
-
-    counter = 0;
-    i = 0;
-    while (s[i])
-    {
-        while (s[i] == c)
-            i++;
-        if (s[i] && s[i] != c)
-        {
-            while (s[i] != c)
-                i++;
-            counter++;
-        }
-    }
-    return counter;
+	while (j)
+	{
+		free(ptr[j - 1]);
+		j--;
+	}
+	free(ptr);
 }
 
-char split(char **ptr, char const *s, char c)
+static int	count_word(char const *words, char c)
 {
-    int i; 
-    int j; 
-    int k;
+	int	i;
+	int	count;
 
-    k = 0;
-    i = 0;
-    j = 0;
-
-    while(s[i])
-    {
-        while (s[i] && s[i] == c)
-            i++;
-        if (s[i] && s[i] == c)
-        {
-            k = 0;
-            ptr[j]= malloc((sizeof(char)) * count_words(s, c) + 1);
-            if (!ptr)
-                return 0;
-            while(s[i] && s[i] != c)
-            {
-                ptr[j][k++] = s[i++];
-                                
-            }
-            ptr[j++][k] = '\0'; 
-        }
-        ptr[j] = 0; 
-        return ptr;
-    }
+	i = 0;
+	count = 0;
+	while (words[i])
+	{
+		while (words[i] && words[i] == c)
+		{
+			i++;
+		}
+		if (words[i] && words[i] != c)
+		{
+			while (words[i] && words[i] != c)
+			{
+				i++;
+			}
+			count++;
+		}
+	}
+	return (count);
 }
-char **ft_split(char const *s, char c)
+
+static int	words_length(char const *words, char c, int i)
 {
-    char **ptr;
-    int counter;
+	int	len;
 
-    counter = count_words(s,c);    
-    ptr = (char **)malloc(sizeof(char) * (counter+1));
-    if (!ptr)
-        return 0;
+	len = 0;
+	while (words[i] && words[i] == c)
+	{
+		i++;
+	}
+	while (words[i] && words[i] != c)
+	{
+		len++;
+		i++;
+	}
+	return (len);
+}
 
+static char	**split(char **ptr, const char *s, char c, int i)
+{
+	int	j;
+	int	k;
+
+	j = 0;
+	i = 0;
+	while (s[i])
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
+		{
+			k = 0;
+			ptr[j] = malloc((sizeof(char )) * (words_length(s, c, i) + 1));
+			if (!ptr[j])
+			{
+				free_words(j, ptr);
+				return (0);
+			}
+			while (s[i] && s[i] != c)
+				ptr[j][k++] = s[i++];
+			ptr[j++][k] = '\0';
+		}
+	}
+	ptr[j] = 0;
+	return (ptr);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**ptr;
+	int		i;
+
+	if (!s)
+	{
+		return (0);
+	}
+	ptr = malloc((sizeof(char *)) * count_word(s, c) + 1);
+	i = 0;
+	if (!ptr)
+		return (0);
+	return (split(ptr, s, c, i));
 }

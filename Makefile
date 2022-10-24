@@ -38,6 +38,7 @@ FILES = ft_calloc.c \
 		ft_atoi.c \
 		ft_itoa.c \
 		ft_striteri.c \
+		ft_split.c \
 		ft_strmapi.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
@@ -50,7 +51,8 @@ FILES2 = ft_lstnew.c \
 		ft_lstadd_back.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
-		ft_lstadd_front.c
+		ft_lstadd_front.c \
+		ft_lstiter.c
 OBJA = $(FILES:.c=.o)
 OBJB = $(FILES2:.c=.o)
 CC = cc
@@ -59,12 +61,13 @@ CFLAGS = -Wall -Wextra -Werror -I libft.h
 all : $(NAME)
 $(NAME): $(OBJA)
 	ar crs $(NAME) $(OBJA)
-%.o:%.c
+%.o:%.c libft.h
 	$(CC) -c $(CFLAGS) $^
 bonus : $(OBJB)
 	ar rcs $(NAME) $^
 clean :
-	rm -f $(OBJA) 
+	rm -f $(OBJA) $(OBJB) 
 fclean : clean
 	rm -f $(NAME)
 re : fclean all
+.PHONY : all bonus fclean clean re

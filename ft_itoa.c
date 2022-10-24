@@ -1,7 +1,17 @@
-#include <stdio.h>
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/24 20:56:00 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/24 20:56:01 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int len_counter(long c)
+#include "libft.h"
+static int len_counter(long c)
 {
     int counter; 
     counter = 0;
@@ -13,7 +23,7 @@ int len_counter(long c)
     return counter ;
 }
 
-void dev(long c, char *x , int temp, int flag)
+static void dev(long c, char *x , int temp, int flag)
 {
     int m;
     int t;
@@ -35,6 +45,24 @@ void dev(long c, char *x , int temp, int flag)
     else
         x[t] = '\0';
 }
+static char  *allocation(int *flag, char *x, int *temp)
+{
+    if (*flag == 1)
+    {
+        x = (char *)malloc(sizeof(char) * ((*temp) + 2));
+        if(!x)
+            return 0;
+        x[0] = '-';
+    }
+    else
+    {
+        x = (char *)malloc(sizeof(char) * ((*temp) + 1));
+        if(!x)
+            return 0;
+        (*temp)--;
+    }
+    return x; 
+}
 char *ft_itoa(int c1)
 {
     char *x;
@@ -43,6 +71,7 @@ char *ft_itoa(int c1)
     long c;
     
     c = c1;
+    x = NULL ;
     flag = 0;
     if (c < 0)
     {
@@ -50,20 +79,9 @@ char *ft_itoa(int c1)
       flag = 1;
     }
     temp = len_counter(c) + 1;
-    if (flag == 1)
-    {
-        x = (char *)malloc(sizeof(char) * (temp + 2));
-        if(!x)
-            return 0;
-        x[0] = '-';
-    }
-    else
-    {
-        x = (char *)malloc(sizeof(char) * (temp + 1));
-        if(!x)
-            return 0;
-        temp--;
-    }
+    x = allocation(&flag, x, &temp);
+    if (!x)
+        return 0;
     dev(c, x, temp, flag);
     return x;
 }

@@ -13,6 +13,8 @@
 
 void *ft_calloc(size_t count, size_t size)
 {
+	if (count == SIZE_MAX && size == SIZE_MAX) 
+		return NULL;
 	char *temp;
 	temp = (char *)malloc(count * size);
 	if (!temp)

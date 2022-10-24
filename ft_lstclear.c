@@ -1,14 +1,20 @@
 #include "libft.h"
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-    if (!lst || !del)
-        return ;
-    t_list *l1;
-    while (*lst)
-    {
-        l1 = (*lst) -> next;
-        ft_lstdelone(*lst ,del);
-        (*lst) = l1;
-    }
+	t_list	*ls1;
+	t_list	*temp;
+
+	if (lst && del)
+	{
+		ls1 = *lst;
+		while (ls1 != NULL)
+		{
+			(*del)(ls1->content);
+			temp = ls1->next;
+			free(ls1);
+			ls1 = temp;
+		}
+		*lst = NULL;
+	}
 }
 

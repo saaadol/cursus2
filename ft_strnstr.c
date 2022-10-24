@@ -1,37 +1,38 @@
 #include "libft.h"
-#include<stdio.h>
-#include<string.h>
-char *ft_strnstr(const char *haystack, const char *needle, size_t len)
+#include <string.h>
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	size_t	n;
-	char	*s;
 
+	if (len == 0 && !haystack )
+		return 0;
+	if (!*needle)
+		return ((char * )haystack);
 	i = 0;
-	j = 0;
-	n = ft_strlen(needle);
-	s = (char *) haystack;
-	if (n == 0 || len == 0) 
-		return (s);
-	while (i < len)
+	while (haystack[i] && i < len)
 	{
-		if (needle[j] == s[i] && j <= n)
-			j++;
-		else
-			j = 0;
+		j = 0;
+		if (haystack[i] == needle[j])
+		{
+			while (i + j < len && haystack[i + j] == needle[j])
+			{
+				j++;
+				if (!needle[j])
+					return ((char * )haystack + i);
+			}
+		}
 		i++;
-		if (j == n)
-			return (s + i - n);
 	}
-	return NULL;
+	return (0);
 }
+
 
 // int main()
 // {
 //     char *s1 = "";
 // 	char *s2 = "hello";
-//     printf("%s\n", ft_strnstr(0, "hello", 3));  
+//     printf("%s\n", ft_strnstr("aaabcabcd", "aabc", -1));  
 //     printf("----------\n");
-//     printf("%s\n", strnstr(0, "hello", 3)); 
+//     printf("%s\n", strnstr("aaabcabcd", "aabc", -1)); 
 // }

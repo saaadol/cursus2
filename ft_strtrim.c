@@ -9,11 +9,9 @@
 /*   Updated: 2022/10/08 20:57:50 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdlib.h>
-#include<stdio.h>
 #include "libft.h"
 
-int checkfirst(char const *s1, char const *set)
+static int checkfirst(char const *s1, char const *set)
 {
 	int		i;
 	int		j;
@@ -40,7 +38,7 @@ int checkfirst(char const *s1, char const *set)
 	}
 	return (i);
 }
-int checklast(char const *s1, char const *set, int last)
+static int checklast(char const *s1, char const *set, int last)
 {
 	int		i;
 	int		j;
@@ -65,8 +63,6 @@ int checklast(char const *s1, char const *set, int last)
 		else
 			break ;
 	}
-	// if (last - i < 0)
-	// 	return (0);
 	return (last - i);
 }
 char	*ft_strtrim(char const *s1, char const *set)
@@ -94,10 +90,5 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	return (str);
 }
-int main()
-{
-	char *s1 = "  \t \t \n   \n\n\n\t";
-	char *ret = ft_strtrim(s1, " \n\t");
-	printf("%s", ret);
-}
+
 

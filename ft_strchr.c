@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 11:19:13 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/24 21:44:51 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/26 15:15:11 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,9 @@ char	*ft_strchr(const char *s, int c)
 
 	len = ft_strlen(s);
 	i = 0;
-	if (c > 256)
-		c = c -256;
 	while (i <= len)
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char) c)
 			return ((char *)s + i);
 		i++;
 	}

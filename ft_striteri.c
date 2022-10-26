@@ -1,20 +1,27 @@
-#include <stdio.h>
-void f_striteri(unsigned int i, char *s) 
-{
-    *s += i;
- }
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/26 12:53:15 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/26 12:54:31 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void ft_striteri(char *s, void (*f)(unsigned int, char *))
-{
+#include "libft.h"
 
-    unsigned int i;
-    
-    if (!s || !f)
-        return ; 
-    i = 0;
-    while (s[i])
-    { 
-        f(i,&s[i]);
-        i++;
-    }
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+{
+	unsigned int	i;
+
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/26 13:07:10 by souledla          #+#    #+#             */
+/*   Updated: 2022/10/26 13:22:42 by souledla         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-#include <string.h>
+
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	if (len == 0 && !haystack )
-		return 0;
+	if (len == 0 && !haystack)
+		return (0);
 	if (!*needle)
-		return ((char * )haystack);
+		return ((char *)haystack);
 	i = 0;
 	while (haystack[i] && i < len)
 	{
@@ -19,15 +31,13 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 			{
 				j++;
 				if (!needle[j])
-					return ((char * )haystack + i);
+					return ((char *)haystack + i);
 			}
 		}
 		i++;
 	}
 	return (0);
 }
-
-
 // int main()
 // {
 //     char *s1 = "";

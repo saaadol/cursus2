@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 12:21:11 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/26 13:20:19 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/28 17:28:40 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*l1;
 
+	if (!lst)
+		return ;
 	if (!*lst)
 		*lst = new;
 	else

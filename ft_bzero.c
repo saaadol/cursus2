@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 20:54:53 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/26 19:27:24 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/28 10:17:01 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_bzero(void *s, size_t n)
 	size_t	i;
 	char	*temp;
 
+	if (n == 0)
+		return ;
 	temp = (char *) s;
 	i = 0;
 	while (i < n)

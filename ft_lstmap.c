@@ -6,10 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:17:43 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/26 13:18:58 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/28 14:17:17 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));

@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:27:24 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/26 12:41:37 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/28 16:52:21 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,21 @@ void	*ft_memset(void *b, int c, size_t len)
 	}
 	return (b);
 }
+// int main()
+// {
+// 	int x = {1337};
+// 	int number = 255 << 8 | 97;
+	
+// 	char c = 'a';
+// 	int cn = (int)c;
+	
+
+// 	if (c == (char)number)
+// 		printf("hello there\n");
+// 	int *x2 = ft_memset(&x, 5, 2);
+// 	//  x2 = ft_memset(&x, 57,1);
+// 	//ft_memset(&x, 5,2);
+// 	// ft_memset(x, 5,2);
+// 	printf("%d", x);
+	
+// }

@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 20:56:11 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/28 10:13:52 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:23:24 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,3 +55,4 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * x[1]);
 }
+

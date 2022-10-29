@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:07:10 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/26 13:22:42 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:59:37 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 // {
 //     char *s1 = "";
 // 	char *s2 = "hello";
-//     printf("%s\n", ft_strnstr("aaabcabcd", "aabc", -1));  
+//     printf("%s\n", ft_strnstr("", "", 0));  
 //     printf("----------\n");
-//     printf("%s\n", strnstr("aaabcabcd", "aabc", -1)); 
+//     printf("%s\n", ft_strnstr("", "", 0)); 
 // }

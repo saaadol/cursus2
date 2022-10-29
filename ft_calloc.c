@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:06:32 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/28 14:01:33 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/30 00:15:43 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	char	*temp;
+	void		*ptr;
 
-	if (count == SIZE_MAX && size == SIZE_MAX)
+	ptr = malloc(size * count);
+	if (ptr == NULL)
 		return (NULL);
-	temp = (char *)malloc(count * size);
-	if (!temp)
-		return (0);
-	ft_memset(temp, 0, count * size);
-	return (temp);
+	ft_bzero(ptr, count * size);
+	return (ptr);
 }

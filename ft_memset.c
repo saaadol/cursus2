@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:27:24 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/28 16:52:21 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/29 23:47:09 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	size_t	i;
-	char	*x;
+	unsigned char	*x;
 
 	x = b;
 	i = 0;

@@ -6,11 +6,16 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 12:53:15 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/26 12:54:31 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/29 23:45:50 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+// void fun(unsigned int c, char *s)
+// {
+	
+// }
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {

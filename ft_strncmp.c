@@ -6,11 +6,12 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:05:45 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/26 13:22:27 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/29 17:53:58 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "string.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

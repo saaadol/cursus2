@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: souledla <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: souledla <souledla@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/09 19:20:24 by souledla          #+#    #+#              #
-#    Updated: 2022/10/12 13:54:13 by souledla         ###   ########.fr        #
+#    Updated: 2022/10/29 23:53:07 by souledla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,10 +64,10 @@ $(NAME): $(OBJA)
 %.o:%.c libft.h
 	$(CC) -c $(CFLAGS) $^
 bonus : $(OBJB)
-	ar rcs $(NAME) $^
+	ar rc $(NAME)
 clean :
 	rm -f $(OBJA) $(OBJB) 
 fclean : clean
 	rm -f $(NAME)
 re : fclean all
-.PHONY : all bonus fclean clean re
+.PHONY : fclean clean re

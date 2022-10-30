@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:40:48 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/29 15:38:33 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/30 14:32:55 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char		*d;
-	const unsigned char *s;
-	const unsigned  char	*lasts;
-	unsigned char		*lastd;
+	unsigned char				*d;
+	const unsigned char			*s;
+	const unsigned char			*lasts;
+	unsigned char				*lastd;
 
 	s = src;
 	d = dest;

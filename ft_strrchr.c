@@ -6,13 +6,11 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 13:07:55 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/29 18:04:57 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/30 16:26:32 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
-
 
 char	*ft_strrchr(const char *s, int c)
 {
@@ -27,11 +25,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (0);
 }
-// int main()
-// {
-//     char *s1 = "hyllo";
-// 	char *s2 = "hyllo";
-//     printf("%s\n", ft_strrchr(s1, 0));  
-//     printf("----------\n");
-//     printf("%s\n", strrchr(s1, 0)); 
-// }

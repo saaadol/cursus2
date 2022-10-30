@@ -6,12 +6,11 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 21:09:00 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/30 00:02:08 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/30 15:11:01 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "string.h"
 
 size_t	ft_strlen(const char *s)
 {

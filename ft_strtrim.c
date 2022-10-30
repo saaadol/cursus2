@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:55:31 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/29 23:45:32 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/30 15:26:32 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,27 +83,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	end = checklast(s1, set, s_l - 1);
 	if (start > end)
 		return (ft_calloc(1, 1));
-	str = (char *) malloc(((end - start) + 2) * sizeof(char)); // << protection
-	
-	if (str)
-	{
-		i = 0;
-		while (start <= end)
-			*(str + i++) = *(s1 + start++);
-		*(str + i) = '\0';
-	}
+	str = (char *) malloc(((end - start) + 2) * sizeof(char));
+	if (!str)
+		return (0);
+	i = 0;
+	while (start <= end)
+		*(str + i++) = *(s1 + start++);
+	*(str + i) = '\0';
 	return (str);
 }
-
-
-// int main(int argc, char const *argv[])
-// {
-// 	char SET[] ="  \t";
-// 	char x[]= "			abeahelloaaeab		";
-// 	char *rr = ft_strtrim(x, SET);
-	
-// 	printf("%s",rr);
-// 	free(rr);
-// 	system("leaks trim");
-// 	return 0;
-// }

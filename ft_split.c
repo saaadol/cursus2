@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 12:51:29 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/29 23:45:59 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/30 15:08:17 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,24 +98,3 @@ char	**ft_split(char const *s, char c)
 	res = split2(s, c, array, start);
 	return (res);
 }
-
-// int main(int argc, char const *argv[])
-// {
-// 	char s[] = "fffff,hgth,,hhhh,,,2222,,";
-// 	char **tab = ft_split(s, ',');
-// 	int i = 0;
-// 	while (tab[i])
-// 	{
-// 		printf("%s\n", tab[i++]);
-// 	}
-// 	i = 0;
-// 	while(tab[i])
-// 	{
-// 		tab[i++] = NULL;
-// 		free(tab[i++]);
-		
-// 	}
-// 	free(tab);
-// 	return 0;
-// }
-

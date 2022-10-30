@@ -6,7 +6,7 @@
 #    By: souledla <souledla@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/09 19:20:24 by souledla          #+#    #+#              #
-#    Updated: 2022/10/29 23:53:07 by souledla         ###   ########.fr        #
+#    Updated: 2022/10/30 16:27:01 by souledla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,10 +64,10 @@ $(NAME): $(OBJA)
 %.o:%.c libft.h
 	$(CC) -c $(CFLAGS) $^
 bonus : $(OBJB)
-	ar rc $(NAME)
+	ar crs $(NAME) $^
 clean :
 	rm -f $(OBJA) $(OBJB) 
 fclean : clean
 	rm -f $(NAME)
 re : fclean all
-.PHONY : fclean clean re
+.PHONY : fclean clean re bonus

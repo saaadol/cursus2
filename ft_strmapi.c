@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/20 15:50:40 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/29 17:52:34 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/30 15:25:55 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	x[i] = '\0';
 	return (x);
 }
-// void f(unsigned int i, char x);
-// int main() {
-//     char x[] = "abcd";
-//     printf("%s",ft_strmapi(x,*f));
-
-//     return 0;
-// }

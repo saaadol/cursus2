@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 10:49:13 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/26 13:22:13 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/30 16:30:27 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	}
 	return (total_len);
 }
-/*
-int main()
-{
-	char x[] = "Hellow";
-	//printf("%zu",ft_strlcat(0, x, 0));
-	printf("%zu",strlcat(x, 0, 0));
-} 
-*/

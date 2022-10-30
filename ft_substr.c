@@ -6,7 +6,7 @@
 /*   By: souledla <souledla@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 17:24:03 by souledla          #+#    #+#             */
-/*   Updated: 2022/10/26 19:36:23 by souledla         ###   ########.fr       */
+/*   Updated: 2022/10/30 16:30:01 by souledla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static char	*protection(void)
 {
 	char	*ptr;
 
-	ptr = NULL;
 	ptr = ft_calloc(1, 1);
 	return (ptr);
 }
@@ -44,8 +43,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ptr[i] = '\0';
 	return (ptr);
 }
-
-// int main(void)
-// {
-// 	printf("%s", ft_substr("", 0, 0));
-// }
